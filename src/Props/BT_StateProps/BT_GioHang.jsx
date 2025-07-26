@@ -1,7 +1,6 @@
-import React from 'react'
 
 const BT_GioHang = (props) => {
-    const {gioHang} = props;
+    const {gioHang , xoaSanPham ,tangSoLuong ,giamSoLuong} = props;
   return (
     <div>
         <h3 className='text-right'>Giỏ hàng</h3>
@@ -30,14 +29,24 @@ const BT_GioHang = (props) => {
                   </td>
                   <td>{item.tenSP}</td>
                   <td>
-                    <button className="btn btn-primary btn-sm me-1">-</button>
+                    <button 
+                    className="btn btn-primary btn-sm me-1" 
+                    onClick={()=>giamSoLuong(item.maSP)}
+                    >
+                      -
+                    </button>
                     {item.soLuong}
-                    <button className="btn btn-primary btn-sm ms-1">+</button>
+                    <button 
+                      className="btn btn-primary btn-sm ms-1" 
+                      onClick={()=>tangSoLuong(item.maSP)}
+                      >
+                        +
+                    </button>
                   </td>
                   <td>{item.giaBan}</td>
                   <td>{item.soLuong * item.giaBan}</td>
                   <td>
-                    <button className="btn btn-danger">Xóa</button>
+                    <button className="btn btn-danger" onClick={()=>xoaSanPham(item.maSP)}>Xóa</button>
                   </td>
                 </tr>
                 })}
