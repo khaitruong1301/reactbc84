@@ -4,6 +4,8 @@ import "./css/index.css";
 import BT_StateProps from './Props/BT_StateProps/BT_StateProps';
 import ProductsPage from './api/ProductsPage';
 import ToDoListApi from './api/ToDoListApi';
+import DemoFormLogin from './Form/DemoFormLogin';
+import DemoFormik from './Form/DemoFormik';
 
 /*
   Phân biệt state và props:
@@ -27,7 +29,9 @@ createRoot(document.getElementById('root')).render(
     {/* <BT_StateProps /> */}
     {/* <BT_ChonXe /> */}
     {/* <ProductsPage /> */}
-    <ToDoListApi />
+    {/* <ToDoListApi /> */}
+    {/* <DemoFormLogin /> */}
+    <DemoFormik />
   </>
 )
 
