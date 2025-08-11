@@ -19,6 +19,12 @@ const HeaderHome = () => {
         style={({isActive})=> isActive ? {border:'1px solid orange'}: {}} 
         to="/login" >Login</NavLink>
       </li>
+       <li className="nav-item">
+        <NavLink 
+        className={({isActive})=> isActive ? "bg-white text-dark nav-link": "nav-link"} 
+        style={({isActive})=> isActive ? {border:'1px solid orange'}: {}} 
+        to="/antd" >antd</NavLink>
+      </li>
       <li className="nav-item">
         <NavLink className={({isActive})=> isActive ? "bg-white text-dark nav-link": "nav-link"} to="/register" 
         style={({isActive})=> isActive ? {border:'1px solid orange'}: {}}     
@@ -29,6 +35,13 @@ const HeaderHome = () => {
         <div className="dropdown-menu" aria-labelledby="dropdownId">
           <NavLink className="dropdown-item" to="/react-router-dom/demo-use-navigate">Demo use navigate</NavLink>
           <NavLink className="dropdown-item" to="/react-router-dom/use-search-param">Demo use search param</NavLink>
+        </div>
+      </li>
+      <li className="nav-item dropdown">
+        <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Redux</a>
+        <div className="dropdown-menu" aria-labelledby="dropdownId">
+          <NavLink className="dropdown-item" to="redux-change-number">Demo change number</NavLink>
+      
         </div>
       </li>
     </ul>
