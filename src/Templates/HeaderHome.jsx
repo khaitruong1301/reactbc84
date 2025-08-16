@@ -1,7 +1,16 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Avatar, Badge } from "antd";
+import { useSelector } from "react-redux";
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const HeaderHome = () => {
+
+  const navigate = useNavigate();
+  const { carts } = useSelector((state)=> state.product)
+  console.log('🔥 ~ HeaderHome ~ data:', carts)
+
+  const handleRedirectShoppingCart = ()=>{
+    navigate('/redux-shopping-cart')
+  }
 
     //bs5-navbar-background
   return (
@@ -41,16 +50,27 @@ const HeaderHome = () => {
         <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Redux</a>
         <div className="dropdown-menu" aria-labelledby="dropdownId">
           <NavLink className="dropdown-item" to="redux-change-number">Demo change number</NavLink>
-      
+          <NavLink className="dropdown-item" to="redux-products">Demo products</NavLink>
+          <NavLink className="dropdown-item" to="redux-shopping-cart">Demo shopping cart</NavLink>
         </div>
       </li>
     </ul>
-    <form className="d-flex my-2 my-lg-0">
+    <div className='d-flex items-center gap-3'>
+      <div className='d-flex items-center justify-center'>
+        <Badge count={carts.length} showZero onClick={handleRedirectShoppingCart} style={{ 
+          cursor: "pointer"
+        }}>
+          <Avatar shape="circle"  size="small" />
+        {/* <ShoppingCartOutlined className='text-white'  /> */}
+       </Badge>  
+      </div>
+      <form className="d-flex my-2 my-lg-0">
       <input className="form-control me-sm-2" type="text" placeholder="Search" />
       <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
         Search
       </button>
     </form>
+    </div>
   </div>
 </nav>
 

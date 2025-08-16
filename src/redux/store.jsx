@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import productSlice from "./product";
 
 //Khi bất kì dispatch nào được gọi thì tất cả reducer đều chạy hết
 export const store = configureStore({
@@ -16,6 +17,7 @@ export const store = configureStore({
             // console.log('hàm 2');
             
             return state
-        }
+        },
+        product: productSlice
     }
 });
