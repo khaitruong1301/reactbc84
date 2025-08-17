@@ -20,6 +20,7 @@ import ChangeNumberRedux from './Pages/ReduxDemo/ChangeNumberRedux';
 import ReduxProductsPage from './Pages/ReduxProducts';
 import ReduxShoppingCartPage from './Pages/ReduxShoppingCart';
 import { store } from './redux/store';
+import BookingTicketPage from './Pages/ReduxDemo/BookingTicketPage';
 
 
 createRoot(document.getElementById('root')).render(
@@ -35,6 +36,7 @@ createRoot(document.getElementById('root')).render(
             <Route path='redux-change-number' element={<ChangeNumberRedux />}></Route>
             <Route path='redux-products' element={<ReduxProductsPage />}></Route>
             <Route path='redux-shopping-cart' element={<ReduxShoppingCartPage />}></Route>
+            <Route path='booking-ticket' element={<BookingTicketPage />}></Route>
           </Route>
           <Route path='api' element={<div>
             <header className='bg-dark text-white p-3'>Header</header>
