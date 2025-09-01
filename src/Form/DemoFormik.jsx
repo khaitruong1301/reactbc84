@@ -1,9 +1,12 @@
 //rafce
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useFormik} from 'formik'
 import * as yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { setHandleSave } from '../redux/ModalReducer';
 
 const DemoFormik = () => {
+    const dispatch = useDispatch();
     const frmRegister = useFormik({
         initialValues: {
             username: '',
@@ -19,9 +22,16 @@ const DemoFormik = () => {
         })
         ,
         onSubmit:  async (value) =>{
-            console.log(value); //value sau khi submit
+            console.log(value, 'handle register'); //value sau khi submit
         }
     });
+
+    useEffect(() => {
+        const action = setHandleSave(frmRegister.handleSubmit);
+        dispatch(action);
+    },[])
+
+
     return (
         <form className="container mt-5 p-4 border rounded shadow" style={{ maxWidth: "400px" }} onSubmit={frmRegister.handleSubmit}>
             <h3 className="text-center mb-4">User Registration</h3>

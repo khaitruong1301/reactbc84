@@ -9,8 +9,8 @@ const initialState = {
         { "soGhe": "A2", "gia": 75000, "daDat": false },
         { "soGhe": "A3", "gia": 75000, "daDat": false },
     ]
-
 }
+
 
 const dsGheReducer = createSlice({
     name: "dsGheReducer",

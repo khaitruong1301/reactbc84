@@ -53,6 +53,30 @@ const HeaderHome = () => {
               <NavLink className="dropdown-item" to="/redux-products">Demo products</NavLink>
               <NavLink className="dropdown-item" to="/redux-shopping-cart">Demo shopping cart</NavLink>
               <NavLink className="dropdown-item" to="/booking-ticket">booking ticket</NavLink>
+              <NavLink className="dropdown-item" to="/reduxthunkdemo">Redux thunk demo</NavLink>
+            </div>
+          </li>
+            <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">HOC (HigherOrderComponent)</a>
+            <div className="dropdown-menu" aria-labelledby="dropdownId">
+              <NavLink className="dropdown-item" to="/hoc">HOC</NavLink>
+              <NavLink end to={'/hoc/container-component'} className={({ isActive }) => isActive ? "active dropdown-item" : "dropdown-item"}>Container Component</NavLink>
+              <NavLink end to={'/hoc/demo-container-redux'} className={({ isActive }) => isActive ? "active dropdown-item" : "dropdown-item"}>Demo Container Redux</NavLink>
+
+            </div>
+          </li>
+          <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hook tối ưu</a>
+            <div className="dropdown-menu" aria-labelledby="dropdownId">
+              <NavLink className="dropdown-item" to="/demo-usememo">Demo use memo</NavLink>
+              <NavLink className="dropdown-item" to="/demo-usecallback">Demo useref</NavLink>
+              <NavLink className="dropdown-item" to="/demo-useref">Demo useref</NavLink>
+            </div>
+          </li>
+            <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Custom hook</a>
+            <div className="dropdown-menu" aria-labelledby="dropdownId">
+              <NavLink className="dropdown-item" to="/customhook-fetchdata">Custom hook fetch data</NavLink>
             </div>
           </li>
         </ul>

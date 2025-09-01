@@ -1,6 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import productSlice from "./product";
 import dsGheReducer from './dsGheReducer';
+import ProductReducer from './ProductReducer';
+import storeReducer from './storeReducer';
+import userReducer from './userReducer';
+import modalReducer from './ModalReducer';
 //Khi bất kì dispatch nào được gọi thì tất cả reducer đều chạy hết
 export const store = configureStore({
     reducer: {
@@ -21,6 +25,10 @@ export const store = configureStore({
             return state
         },
         product: productSlice,
-        dsGheReducer: dsGheReducer
+        dsGheReducer: dsGheReducer,
+        productReducer: ProductReducer,
+        storeReducer:storeReducer,
+        userReducer: userReducer,
+        modalReducer: modalReducer
     }
 });

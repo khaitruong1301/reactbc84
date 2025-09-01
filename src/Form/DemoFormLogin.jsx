@@ -1,7 +1,10 @@
 //rafce
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { setHandleSave } from '../redux/ModalReducer';
+import { useDispatch } from 'react-redux';
 
 const DemoFormLogin = () => { //userLogin = {username:'',password:''}
+    const dispatch = useDispatch();
     const [userLogin, setUserLogin] = useState({ username: '', password: '',email:'' });
     const [error,setError] = useState({username:'',password:'',email:''});
     const [valid,setValid] = useState(true);
@@ -52,7 +55,7 @@ const DemoFormLogin = () => { //userLogin = {username:'',password:''}
         if(!valid){//Check nếu cờ valid = false thì không cho submit
             return;
         }
-        console.log('submit');
+        console.log('submit login');
 
     }
     const checkValidForm =  (newUserLogin,newError) =>{
@@ -73,7 +76,10 @@ const DemoFormLogin = () => { //userLogin = {username:'',password:''}
         //Nếu ko rơi vào bất kì return nào thì form hợp lệ
         setValid(true);
     }
-
+    useEffect(() =>{
+        const action = setHandleSave(handleSubmit);
+        dispatch(action);
+    },[]);
 
     return (
         <form className='container' onSubmit={handleSubmit}>

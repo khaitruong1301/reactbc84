@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemProduct from './ItemProduct';
+import { httClientStoreApi } from '../../settings/setting';
 
 
 /*
@@ -18,10 +19,7 @@ const DemoUseParam = () => {
   //Viết hàm gọi api lấy dữ liệu prodDetail
   const getProductDetailById = async () => {
     try {
-      const res = await axios({
-        url: `https://apistore.cybersoft.edu.vn/api/Product/getbyid?id=${params.id}`,
-        method: 'GET'
-      });
+      const res = await httClientStoreApi.get(`/Product/getbyid?id=${params.id}`);
       //Sau khi lấy dữ liệu về đưa vào state
       console.log(res.data);
       setProdDetail(res.data.content);
